@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string name="Furgram">Furgram</string>
+    <string name="FurgramBeta">Furgram Beta</string>
+    <string name="Page1Message2">Furgram is an **unofficial** messaging app\nthat uses Telegram\'s API.</string>
+</resources>

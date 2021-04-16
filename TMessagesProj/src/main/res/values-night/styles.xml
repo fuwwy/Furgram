@@ -29,4 +29,18 @@
         <item name="android:title">""</item>
     </style>
 
+    <style name="ActionBar.Transparent.TMessages.StartDark" parent="@android:style/Widget.Material.ActionBar">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:background">#ff232d3a</item>
+        <item name="android:title"></item>
+        <item name="android:logo">@drawable/transparent</item>
+    </style>
+
+    <style name="Theme.TMessages.StartDark" parent="@android:style/Theme.Material">
+        <item name="android:colorBackground">#ff1f2732</item>
+        <item name="android:windowBackground">#ff1f2732</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:actionBarStyle">@style/ActionBar.Transparent.TMessages.StartDark</item>
+    </style>
+
 </resources>

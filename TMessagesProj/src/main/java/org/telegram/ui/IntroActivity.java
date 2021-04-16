@@ -51,6 +51,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.BottomPagesView;
 import org.telegram.ui.Components.LayoutHelper;
+import party.folf.furgram.FurgramUtils;
 
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLConfig;
@@ -87,7 +88,7 @@ public class IntroActivity extends Activity implements NotificationCenter.Notifi
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.Theme_TMessages);
+        setTheme(FurgramUtils.isNightTheme() ? R.style.Theme_TMessagesDark : R.style.Theme_TMessages);
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
@@ -95,7 +96,7 @@ public class IntroActivity extends Activity implements NotificationCenter.Notifi
         preferences.edit().putLong("intro_crashed_time", System.currentTimeMillis()).commit();
 
         titles = new String[]{
-                LocaleController.getString("Page1Title", R.string.Page1Title),
+                LocaleController.getString("Furgram", R.string.Furgram),
                 LocaleController.getString("Page2Title", R.string.Page2Title),
                 LocaleController.getString("Page3Title", R.string.Page3Title),
                 LocaleController.getString("Page5Title", R.string.Page5Title),
@@ -103,7 +104,7 @@ public class IntroActivity extends Activity implements NotificationCenter.Notifi
                 LocaleController.getString("Page6Title", R.string.Page6Title)
         };
         messages = new String[]{
-                LocaleController.getString("Page1Message", R.string.Page1Message),
+                LocaleController.getString("Page1Message2", R.string.Page1Message2),
                 LocaleController.getString("Page2Message", R.string.Page2Message),
                 LocaleController.getString("Page3Message", R.string.Page3Message),
                 LocaleController.getString("Page5Message", R.string.Page5Message),
@@ -137,7 +138,7 @@ public class IntroActivity extends Activity implements NotificationCenter.Notifi
                 textView.layout(x, y - textView.getMeasuredHeight(), x + textView.getMeasuredWidth(), y);
             }
         };
-        frameLayout.setBackgroundColor(0xffffffff);
+        frameLayout.setBackgroundColor(FurgramUtils.isNightTheme() ? 0xff1d2733 : 0xffffffff);
         scrollView.addView(frameLayout, LayoutHelper.createScroll(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.LEFT | Gravity.TOP));
 
         frameLayout2 = new FrameLayout(this);
@@ -248,7 +249,7 @@ public class IntroActivity extends Activity implements NotificationCenter.Notifi
         frameLayout.addView(bottomPages, LayoutHelper.createFrame(66, 5, Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 350, 0, 0));
 
         textView = new TextView(this);
-        textView.setTextColor(0xff1393d2);
+        textView.setTextColor(FurgramUtils.isNightTheme() ? 0xffffffff : 0xff1393D2);
         textView.setGravity(Gravity.CENTER);
         textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
         frameLayout.addView(textView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, 30, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0, 0, 20));
@@ -408,12 +409,12 @@ public class IntroActivity extends Activity implements NotificationCenter.Notifi
                 }
             };
 
-            headerTextView.setTextColor(0xff212121);
+            headerTextView.setTextColor(FurgramUtils.isNightTheme() ? 0xffffffff : 0xff212121);
             headerTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 26);
             headerTextView.setGravity(Gravity.CENTER);
             frameLayout.addView(headerTextView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.TOP | Gravity.LEFT, 18, 244, 18, 0));
 
-            messageTextView.setTextColor(0xff808080);
+            messageTextView.setTextColor(FurgramUtils.isNightTheme() ? 0xffffffff : 0xff212121);
             messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 15);
             messageTextView.setGravity(Gravity.CENTER);
             frameLayout.addView(messageTextView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.TOP | Gravity.LEFT, 16, 286, 16, 0));

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="Primary">#ff1d2733</color>
+    <color name="PrimaryDark">#ff2f6284</color>
     <color name="divider">#dcdcdc</color>
+    <color name="darkBlue">#ff1d2733</color>
     <color name="widget_name">#212121</color>
     <color name="widget_badge">#ffffff</color>
     <color name="widget_time">#96999C</color>
